@@ -1,0 +1,203 @@
+html{
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+html, body {
+  height: 100%;
+  color: @body_color;
+  line-height: 1;
+  -webkit-user-select: none;  //禁止用户复制页面文本
+  -webkit-touch-callout: none;
+  -webkit-overflow-scrolling: touch;  //ios滚动效果
+  -webkit-font-smoothing: antialiased;  //mac下字体
+  -webkit-tap-highlight-color: rgba(242, 137, 76, .05); //a标签点击高亮效果
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, span, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-text-size-adjust: none;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+body{
+  font-family: @font-family;
+  letter-spacing: 0;
+  background: @body_bg;
+}
+
+ins, a {
+  text-decoration: none;
+  transition: color .1s ease;
+  -webkit-transition: color .1s ease;
+  color: @a_link;
+}
+
+a:hover {
+  color: @a_link;
+}
+
+/*--滚动条样式--*/
+
+
+// 去掉IE10 input叉叉
+input::-ms-clear {
+  display: none;
+}
+
+// 去掉input默认边框
+input[type=button], input[type=text], input[type=password],[type=tel],[type=number], [type=url], [type=email], button , textarea {
+  border: none;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  font-weight: normal;
+}
+
+// 去掉input=number箭头
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.h8 {
+  height: .4rem;
+  .flex(0);
+}
+.h16 {
+  height: .8rem;
+  .flex(0);
+}
+.h20 {
+  height: 1rem;
+  position: relative;
+  .flex(0);
+  &.bg{ background: #f5f6f7;}
+}
+
+.font30 {
+  font-size: 1.5rem !important;
+}
+
+#app {
+  height: 100%;
+}
+.fl{ float: left;}
+.fr{ float: right;}
+.container {
+  height: 100%;
+  overflow-y: hidden;
+  .navbar + .content{
+    padding-top: @nav_height;
+  }
+}
+//._v-content{
+//  height:100%;
+//}
+.content {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  //background-color: @body_bg;
+  //box-shadow: -10px 0px 10px rgba(0, 0, 0, .1);
+  &.navbar_fixed {
+    top: 0;
+    .navbar nav {
+      background-color: transparent;
+    }
+    ._v-container {
+      top: 0 !important;
+      bottom: 0 !important
+    }
+  }
+  &.display {
+    .display;
+    .flex_direction(column);
+    padding-top: @nav_height;
+  }
+  .scroll_container {
+    .flex;
+    position: relative;
+    ._v-container {
+      top: 0 !important;
+      bottom: 0 !important
+    }
+  }
+  .scroller_list {
+    bottom: -@nav_height;
+  }
+
+}
+.navfixed{
+  position: fixed;
+  top: @nav_height;
+  left: 0;
+  width: 100%;
+  background-color: rgba(252, 252, 252, 0.8);
+  z-index: 1;
+  .item_box > li{
+    height: @nav_height - .2rem;
+    .item_r p{
+      font-size: @fs6;
+    }
+  }
+}
+
+img{
+  vertical-align:middle;
+  border:0;
+}
+
+//圆角，默认是5px
+.border_radius(@radius:5px){
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+//弹性滚动
+.touch(){
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch; 
+}
+//边框
+.border(@s:solid,@w:1px,@c:#e7e7e7){
+  border: @arguments;
+}
+//宽度
+.w10{width: 10%;}
+.w20{width: 20%;}
+.w30{width: 30%;}
+.w40{width: 40%;}
+.w50{width: 50%;}
+.w60{width: 60%;}
+.w70{width: 70%;}
+.w80{width: 80%;}
+.w90{width: 90%;}
+.w100{width: 100% !important;}
+
+.new-loading .weui-toast{
+  width: 5.5em;
+  min-height: 5.5em;
+  top: 35%;
+  left: 50%;
+  margin-left: -2.75em;
+  background: rgba(62, 62, 62, 0.7);
+  .weui-toast__content {
+    margin: 10px 0 15px;
+    font-size: @fs7;
+  }
+}
+
+

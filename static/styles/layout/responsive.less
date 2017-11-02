@@ -1,0 +1,42 @@
+/*
+ * responsive.less
+ * v1.1.1 MIT License
+ * http://www.wke.design
+ * Copyright (c) 2016.10.21 Yuzi, Inc.
+ *
+*/
+@charset "utf-8";
+/*-- 默认Android -------------------------------------------*/
+html {
+  font-size: 20px;
+}
+/*-- 兼容iphone4/4s -------------------------------------------*/
+@media (device-height: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: 18px;
+  }
+}
+/*-- 兼容iphone5 -----------------------------------------*/
+@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: 20px;
+  }
+}
+/*-- 兼容iphone 6 --------------------------------------------*/
+@media (device-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: 20px;
+  }
+}
+/*-- 兼容iphone6 plus --------------------------------------------*/
+@media (device-width: 414px) and (-webkit-min-device-pixel-ratio: 3) {
+  html {
+    font-size: 23px;
+  }
+}
+/*-- 兼容 iPad 3 & 4 ------------------------------------------*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: 20px;
+  }
+}

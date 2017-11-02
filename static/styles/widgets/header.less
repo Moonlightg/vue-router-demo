@@ -1,0 +1,135 @@
+/****************header*******************/
+
+.navbar{
+  // .flex(0);
+  // position: relative;
+  // height: @nav_height;
+  &.transbg nav{
+    background:transparent;
+  }
+  nav {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: @nav_height;
+    background: @nav_background;
+    color: #fff;
+    z-index: 50;
+    .display;
+    .justify_content_center;
+    .return {
+      color: #fff;
+      padding: 0 @margin;
+      z-index: 10;
+      font-size: @fs9;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      .display;
+      .align_items_center;
+      &:active {
+        color: rgba(255,255,255,.5);
+      }
+      &.hover {
+        background-color: rgba(255, 255, 255, .5);
+      }
+    }
+    .nav_title {
+      position: relative;
+      z-index: 0;
+      text-align: center;
+      font-size: @fs9;
+      font-weight: 400;
+      max-width: 60%;
+      .display;
+      .align_items_center;
+      p {
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        color: #fff;
+        line-height:1.1rem;
+      }
+      &_left{
+        position: absolute;
+        top: .5rem;
+        left: 2.5rem;
+        right: 5.5rem;
+      }
+    }
+    a.nav_title {
+      p{
+        padding-right: .8rem;
+        &:active {
+          color: rgba(255,255,255,.5);
+        }
+      }
+
+      &::after {
+        right: 0;
+        .arrow_down(.25rem, rgba(255,255,255,.5));
+      }
+    }
+    .nav_r {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 10;
+      font-size: @fs9;
+      .display;
+      a {
+        .display;
+        .align_items_center;
+        color: #fff;
+        padding: 0 @margin;
+        &:active {
+          color: rgba(255,255,255,.5);
+        }
+        /*确认按钮禁用时颜色*/
+        .icon-correct.disabled {
+          color: rgba(255,255,255,.5);
+        }
+        &>span{ font-size: @fs8;}
+      }
+    }
+  }
+  + .sub_title {
+    top: @nav_height;
+  }
+}
+
+.header_wrap {
+  .display;
+  .flex_direction(column);
+  .align_items_center;
+  .justify_content_center;
+  padding: @nav_height - 1rem 0 1rem 0;
+  p {
+    font-size: .7rem;
+    color: rgba(255, 255, 255, .5);
+  }
+  i {
+    font-size: 3rem;
+    font-weight: 100;
+    color: white;
+  }
+  h2, h3 {
+    font-size: 2.4rem;
+    font-weight: lighter;
+    color: white;
+    padding: .5rem 0;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  // 背景配置
+  &.navy_blue {
+    background: @brand_primary url('/static/styles/images/bg-1.jpg') no-repeat center bottom;
+    background-size: cover;
+  }
+
+}
+
+

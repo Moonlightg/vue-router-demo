@@ -1,0 +1,45 @@
+/*
+ * arrow.less
+ * v1.1.1 MIT License
+ * https://moonlightg.github.io/mmp
+ * Copyright (c) 2017.5.24 Moonlight, Inc.
+ *
+*/
+
+
+.arrow_base {
+  position: absolute;
+  top: 50%;
+  content: '';
+  width: 0;
+  height: 0;
+  .transform(translate3d(0, -50%, 0))
+}
+
+.arrow_up(@arrow_width: 0.5rem; @arrow_color: @brand_info) {
+  .arrow_base;
+  border-left: @arrow_width solid transparent;
+  border-right: @arrow_width solid transparent;
+  border-bottom: @arrow_width solid @arrow_color;
+}
+
+.arrow_down(@arrow_width: 0.5rem; @arrow_color: @brand_info) {
+  .arrow_base;
+  border-left: @arrow_width solid transparent;
+  border-right: @arrow_width solid transparent;
+  border-top: @arrow_width solid @arrow_color;
+}
+
+.arrow_left(@arrow_width: 0.5rem; @arrow_color: @brand_info) {
+  .arrow_base;
+  border-top: @arrow_width solid transparent;
+  border-bottom: @arrow_width solid transparent;
+  border-right: @arrow_width solid @arrow_color;
+}
+
+.arrow_right(@arrow_width: 0.5rem; @arrow_color: @brand_info) {
+  .arrow_base;
+  border-top: @arrow_width solid transparent;
+  border-bottom: @arrow_width solid transparent;
+  border-left: @arrow_width solid @arrow_color;
+}

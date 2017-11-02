@@ -1,0 +1,78 @@
+/*
+ * border.less
+ * v1.2.0 MIT License
+ * http://www.Yuzi.me
+ * Copyright (c) 2017.6.8 Yuzi, Inc.
+ *
+*/
+
+.hairline_scale (@color, @line) {
+    content: '';
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.hairline_left_right(@color) {
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid @color !important;
+}
+
+.hairline_top_bottom(@color) {
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    border-left: 1px solid @color;
+}
+
+// all border
+.hairline_scale (@color, @line) when (@line = all) {
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    //transform: scale(0.5);
+    .transform(scale(0.5));
+    transform-origin: 0 0;
+    border: 1px solid @color;
+    pointer-events: none; //解决内部元素无法点击问题
+}
+
+// top border
+.hairline_scale (@color, @line) when (@line = top) {
+    top: 0;
+    //transform: scaleY(0.5);
+    .transform(scaleY(0.5));
+    transform-origin: 100% 0;
+    .hairline_left_right(@color);
+    
+}
+
+// bottom border
+.hairline_scale (@color, @line) when (@line = bottom) {
+    bottom: 0;
+    //transform: scaleY(-0.5);
+    .transform(scaleY(0.5));
+    transform-origin: 0 80%;
+    .hairline_left_right(@color);
+}
+
+// left border
+.hairline_scale (@color, @line) when (@line = left) {
+    left: 0;
+    //transform: scaleX(0.5);
+    .transform(scaleX(0.5));
+    transform-origin: 0 100%;
+    .hairline_top_bottom(@color);
+}
+
+// right border
+.hairline_scale (@color, @line) when (@line = right) {
+    right: 0;
+    //transform: scaleX(-0.5);
+    .transform(scaleX(-0.5));
+    transform-origin: 100% 0;
+    .hairline_top_bottom(@color);
+}
